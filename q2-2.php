@@ -1,12 +1,18 @@
 <?php
  //2-12
-//  $num = fgets(STDIN);
-//  $plus5 = mt_rand($num + 5);
-//  $minus5 = mt_rand($num - 5);
-//  $ransu = mt_rand($plus5,$minus5);
-//  echo "整数値: $num \n";
-//  echo "その値±5の乱数を生成しました。\n";
-//  echo "値は $ransu です。\n";
+ $num = fgets(STDIN);
+ $p5 = $num + 5 ;
+ $m5 = $num - 5 ;
+  print_r($p5);
+  print_r($m5);
+ $plus5 = mt_rand($num,$p5);
+ print_r($plus5);
+ $minus5 = mt_rand($num,$m5);
+ print_r($minus5);
+ $ransu = mt_rand($plus5,$minus5);
+ echo "整数値: $num \n";
+ echo "その値±5の乱数を生成しました。\n";
+ echo "値は $ransu です。\n";
 
 
 //2-13

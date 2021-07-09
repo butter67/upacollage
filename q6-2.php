@@ -1,34 +1,34 @@
 <?php
 //6-13 ◯
-// echo "要素数： $n";
-// $n = (int)fgets(STDIN);
-// $array = range(1, $n);
-// for ( $i = 0; $i < $n; $i++ ) {
-//   shuffle($array);
-//   echo "a[$i] = $array[$i]\n";
-// }
-// echo "要素をかき混ぜました。\n";
-// shuffle($array); 
-// for ( $i = 0; $i < $n; $i++ ) {
-//   echo "a[$i] = $array[$i]\n";
-// }
+echo "要素数： $n";
+$n = (int)fgets(STDIN);
+$array = range(1, $n);
+for ( $i = 0; $i < $n; $i++ ) {
+  shuffle($array);
+  echo "a[$i] = $array[$i]\n";
+}
+echo "要素をかき混ぜました。\n";
+shuffle($array); 
+for ( $i = 0; $i < $n; $i++ ) {
+  echo "a[$i] = $array[$i]\n";
+}
 
 //6-14  ◯
-// echo "要素数：$n\n";
-// $n = fgets(STDIN);
-// $a = array();
-// $b = array();
-// for ( $i = 0; $i < $n; $i++ ) {
-//     echo "要素を$n 個入力してください：$num\n";
-//     $num = fgets(STDIN);
-//     $a[$i] = $num;
-//     echo "a[$i] = $num\n";
-// }
-// echo "配列aの全要素を逆順にbにコピーしました。\n";
-// $b = array_reverse($a);
-// for ( $i = 0; $i < $n; $i++ ) {
-//     echo "b[$i] = $b[$i]\n";
-// }
+echo "要素数：$n\n";
+$n = fgets(STDIN);
+$a = array();
+$b = array();
+for ( $i = 0; $i < $n; $i++ ) {
+    echo "要素を$n 個入力してください：$num\n";
+    $num = fgets(STDIN);
+    $a[$i] = $num;
+    echo "a[$i] = $num\n";
+}
+echo "配列aの全要素を逆順にbにコピーしました。\n";
+$b = array_reverse($a);
+for ( $i = 0; $i < $n; $i++ ) {
+    echo "b[$i] = $b[$i]\n";
+}
 
 //6-15  × 惜しいような‥
 // $mo = array("January","February","March","April","May","June","July","August","September","October","November","December");

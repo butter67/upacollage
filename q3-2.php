@@ -1,5 +1,5 @@
 <?php
- //3-11
+ //3-11　◯
  $num = fgets(STDIN);
  echo "点数: $num\n";
  if ( $num >= 0 && $num <= 59 ) {
@@ -13,7 +13,7 @@
   };
    
   
-//3-12
+//3-12　◯
 $a = 25.7;
 $b = 15.3;
 echo "実数a: $a\n"; 
@@ -23,7 +23,7 @@ if ($a > $b) {
 };
 
 
-//3-13
+//3-13　◯
 $a = 10;
 $b = 40;
 echo "整数A: $a\n"; 
@@ -37,7 +37,7 @@ if ( $a >= $b ) {
 };
      
 
-//3-14
+//3-14　◯
 $a = 16;
 $b = 3;
 echo "整数A: $a\n"; 
@@ -50,7 +50,7 @@ if ( $res < 10 ) {
 }
 
 
-//3-15
+//3-15 ◯
 $a = fgets(STDIN);
 $b = fgets(STDIN);
 $c = fgets(STDIN);
@@ -59,20 +59,24 @@ echo "整数b : $b";
 echo "整数c : $c";
 $min = $a;
 if ( $min > $b ) {
+  $temp = $min;
   $min = $b;
+  $a = $temp;
 } 
 if ( $min > $c ) {
+  $temp = $min;
   $min = $c;
+  $a = $temp;
 }
 echo "最小値は$min です。";
 
 //3-16 
-// $a = fgets(STDIN);
-// $b = fgets(STDIN);
-// $c = fgets(STDIN);
-// echo "整数a : $a";
-// echo "整数b : $b";
-// echo "整数c : $c";
+$a = fgets(STDIN);
+$b = fgets(STDIN);
+$c = fgets(STDIN);
+echo "整数a : $a";
+echo "整数b : $b";
+echo "整数c : $c";
 
 //3-17
 $a = 100;
