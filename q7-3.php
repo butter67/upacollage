@@ -1,37 +1,50 @@
 <?php
-//7-21 ×難しい。。
-// $a = array();
-// $b = array();
-// function rep () {
-//     echo "配列Aに入れる要素数を入力してください。\n";
-//     $youso = (int)fgets(STDIN);
-//     echo "要素数a：$youso\n";
-//     echo "$youso 個数字を入力してください。\n";
+//7-21 ◯
+$arr = [];
+$brr = [];
 
-//     for ( $i = 0; $i < $youso; $i++ ) {
-//      $num = fgets(STDIN);
-//      $a[$i] = $num;
-//      echo "a[$i] = $num\n";
-//   }
+    echo "配列Aに入れる要素数を入力してください。\n";
+    $youso = (int)fgets(STDIN);
+    echo "要素数a：$youso\n";
+    echo "$youso 個数字を入力してください。\n";
+    for ( $i = 0; $i < $youso; $i++ ) {
+      $arr[$i] = (int)fgets(STDIN);
+      $na = $arr[$i];
+      echo "a[$i] = $na\n";
+  }
 
-//     echo "配列Bに入れる要素数を入力してください。\n";
-//     $yousob = (int)fgets(STDIN);
-//     echo "要素数a：$yousob\n";
-//     echo "$yousob 個数字を入力してください。\n";
 
-//     for ( $j = 0; $j < $yousob; $j++ ) {
-//      $num = fgets(STDIN);
-//      $b[$j] = $num;
-//      echo "b[$j] = $num\n";
-//   }
+    echo "配列Bに入れる要素数を入力してください。\n";
+    $yousob = (int)fgets(STDIN);
+    echo "要素数a：$yousob\n";
+    echo "$yousob 個数字を入力してください。\n";
+    for ( $i = 0; $i < $yousob; $i++ ) {
+      $brr[$i] = (int)fgets(STDIN);
+      $nab = $brr[$i];
+      echo "a[$i] = $nab\n";
+    }
+    print_r($arr);
+    print_r($brr);
 
-//   $res = array_replace($a,$b);
-//   var_dump($res);
+    $ar = count($arr);
+    $br = count($brr);
+    if ( $ar < $br ) {
+      $n = $br;
+    } else {
+      $n = $a;
+     }
+    for ( $i = 0; $i < $n; $i++ ) {
+      $tmp = [];
+      $tmp[$i] = $arr[$i];
+      $arr[$i] = $brr[$i];
+      $brr[$i] = $tmp[$i];
+    }
+    echo "配列aの要素とbの要素を交換しました。\n";
+    print_r($arr);
+    print_r($brr);
 
-// }
-// rep();
 
-//-7-22  ◯
+//7-22  ◯
 function arr () {
     echo "配列に入れる要素数を入力してください。\n";
     $youso = (int)fgets(STDIN);
@@ -86,38 +99,40 @@ function arrayRmvOf($arr,$index,$youso) {
  arrayRmvOf($arr,$index,$youso);
 
 
-//7-25　×7-19の応用でそこが出来次第できそう　できそうで詰まった
-function arrayRmvOfN($arr,$index,$youso,$kosu) {
-    $res = array_search($index,$arr); 
-    echo "削除する開始する要素のインデックス:$res\n";
-    unset($arr[$res]);
-    $arr = array_values($arr);
-    $youso = $youso - 1;
-     echo "削除後を表示します。\n";
-     for ( $i = 0; $i < $youso; $i++ ) {
-      echo "a[$i] = $arr[$i]";
-     }
-     return $arr;
+//7-25　 ◯
+function aryRmvN($arr,$n,$youso,$deln) {
+    echo "削除する要素のインデックス: $n\n";
+    $res = array_search($n,$arr); 
+    echo "resの中身:$res\n";
+    echo "削除したい要素の個数:$deln";
+    $deln = (int)fgets(STDIN);
+    array_splice($arr,$res,$deln);
+    $youso = $youso - $deln;
+ 
+    return $arr;
 }
-
-  echo "配列に入れる要素数を入力してください。\n";
+    echo "配列に入れる要素数を入力してください。\n";
     $youso = (int)fgets(STDIN);
     echo "要素数：$youso\n";
     echo "$youso 個数字を入力してください。\n";
     $arr = array();
-
+    
     for ( $i = 0; $i < $youso; $i++ ) {
      $num = fgets(STDIN);
      $arr[$i] = $num;
      echo "a[$i] = $num\n";
-  } 
+}
+echo "削除したい要素を入力してください。\n";
+ $n = (int)fgets(STDIN);
 
-  echo "削除したい要素を入力してください。\n";
-    $index = (int)fgets(STDIN);
-  echo "削除したい要素をの個数を入力してください。\n";
-    $kosu = (int)fgets(STDIN);
-  echo "削除する開始する要素の値: $index\n";
- arrayRmvOfN($arr,$index,$youso,$kosu);
+
+$ans = aryRmvN($arr,$n,$youso,$deln);
+echo "削除後を表示します。\n";
+$youso -= $deln;
+ for ( $i = 0; $i < $youso; $i++ ) {
+  echo "a[$i] = $ans[$i]\n";
+  }
+echo "$ans";
 
 
 //7-26  ◯
@@ -149,29 +164,53 @@ function arrayInsOf ($arr,$youso) {
   }
 arrayInsOf($arr,$youso);
 
-//7-27 わからない‥
-// $arrx = [ [1,2,3,],[4,5,6] ];
-// $arry = [ [6,3,4],[5,1,2] ];
-// $arrc = [[],[]];
-// print_r($arrx);
-// print_r($arry);
-// print_r($arrc);
+//7-27 
+$arrx = [ [1,2,3],[4,5,6] ];
+$arry = [ [6,3,4],[5,1,2] ];
+$arrc = [[],[]];
+print_r($arrx);
+print_r($arry);
+print_r($arrc);
 
 // function addMatrix($arrx,$arry,$arrc) {
-//   $xr = count($arrx);
-//   $yr = count($arry);
-//   $zr = count($arrc);
-//  if ( $xr != $yr || $yr != $zr ) {
-//    return false;
-//  } else {
-//    return true;
-//  }
+  $xr = count($arrx);
+  $yr = count($arry);
+  $zr = count($arrc);
+  print_r($xr);
+  print_r($yr);
+  print_r($zr);
+ if ( $xr != $yr || $yr != $zr ) {
+   return false;
+  for ( $i = 0; $i < count($arrx); $i++ ) {
+    for ( $j = 0; $j < count($arrx[$i]); $j++ ) {
+      $arrc[$i][$j] = $arrx[$i][$j] + $arry[$i][$j];
+      $ans = $arrc[$i][$j];
+      echo "$ans \n";
+    }
+  } 
+ }
+ echo "arrx の中身：\n";
+ print_r($arrx);
+ echo "arry の中身：\n";
+print_r($arry);
+echo "arrc の中身：\n";
+print_r($arrc);
+//  return $arrc;
 // }
+
 // $res = addMatrix($arrx,$arry,$arrc);
+// for ( $i = 0; $i < count($res); $i++ ) {
+//   for ( $j = 0; $j < count($res[$i]); $j++ )
+//   echo "行列c :\n";
+//   echo "$res[$i][$j]\n";
+// }
 // echo "$res\n";
 
-//7-28
+//7-28 ◯
+//別ファイル(7-28.php)に記述
+
 //7-29
+//別ファイル(7-29.php)に記述
 
 //7-30 ◯
 function mina($x,$y) {

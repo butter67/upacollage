@@ -57,21 +57,21 @@ for ( $i = 1; $i <= $n; $i++ ) {
 echo "= $sum ";
 
 
-//4-16 × なぜか気になる
-// echo "身長と標準体重の対応表を作成します。";
-// echo "何cmから: $cm\n";
-// $cm = (int)fgets(STDIN);
-// echo "何cmまで: $tocm\n";
-// $tocm = (int)fgets(STDIN);
-// echo "何cmごと: $tillcm\n";
-// $tillcm = (int)fgets(STDIN);
-// echo "身長　標準体重\n";
-// echo "--------------\n";
-// for ( $i = $cm; $i <= $tocm; $i += $tillcm++ ) {
-//     $res = ( $cm - 100 ) * 0.9;
-//     echo "$cm\n";
-//     echo "$res\n"; 
-// }
+//4-16 ◯
+echo "身長と標準体重の対応表を作成します。";
+echo "何cmから: $cm\n";
+$cm = (int)fgets(STDIN);
+echo "何cmまで: $tocm\n";
+$tocm = (int)fgets(STDIN);
+echo "何cmごと: $tillcm\n";
+$tillcm = (int)fgets(STDIN);
+echo "身長　標準体重\n";
+echo "--------------\n";
+for ( $i = $cm; $i <= $tocm; $i += $tillcm ) {
+    $res = ( $i - 100 ) * 0.9;
+    echo "$i\n";
+    echo "$res\n"; 
+}
 
 
 //4-17　◯
@@ -86,13 +86,13 @@ if ( $num > 0 ) {
    } 
 }
 
-//4-18 △結果が
-$num = (int)fgets(STDIN);
+// //4-18 △結果が
 echo "整数値：$num";
+$num = (int)fgets(STDIN);
 $yaku = 0;
 for ( $i = 1; $i <= $num; $i++ ) {
     if ( $num % $i == 0 ) {
-        echo "$num";
+        echo "$i\n";
         $yaku++;
     }
 }

@@ -45,9 +45,28 @@ echo "$heikin";
 $a = (int)10.0;
 echo "a = $a ";
 
-//5-8 ×
+5-8 ◯
+$flo = (float)0.0;
+// $flomax = (float)1.0;
+$int = (int)0;
+echo "float  int \n";
+echo "--------------\n";
+for ( $i = 0; $i < 1000; $i ++ ) {
+     $flo += 0.001;
+    $int++;
+    $res = $int / 1000;
+    echo "$flo  $int\n";
+}
 
-//5-9 ×
+//5-9 
+$flo = (float)0.0;
+echo "x  xの2乗 \n";
+echo "--------------\n";
+for ( $i = 0; $i < 1000; $i ++ ) {
+     $flo += 0.001;
+     $res = $flo * $flo;
+    echo "$flo  $res\n";
+}
 
 //5-10 ◯
 echo '"ABC\n"';

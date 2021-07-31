@@ -71,12 +71,39 @@ if ( $min > $c ) {
 echo "最小値は$min です。";
 
 //3-16 
+echo "整数a : $a\n";
 $a = fgets(STDIN);
+echo "整数b : $b\n";
 $b = fgets(STDIN);
+echo "整数c : $c\n";
 $c = fgets(STDIN);
-echo "整数a : $a";
-echo "整数b : $b";
-echo "整数c : $c";
+$mid = $a;
+if ( $a > $b ) {
+  if ( $b > $c ) {
+    $temp = $a;
+    $mid = $b;
+    $a = $temp;
+  } elseif ( $c > $b ) {
+    $temp = $a;
+    $mid = $c;
+    $a = $temp;
+  }
+} elseif ( $a < $b ) {
+  if ( $a > $c ) {
+    $mid = $a;
+  } elseif ( $a < $c ) {
+    $temp = $a;
+    $mid = $c;
+    $a = $temp;
+  }
+} elseif ( $b < $c ) {
+  if ( $a < $b ) {
+    $temp = $a;
+    $mid = $b;
+    $a = $temp;
+  } 
+}
+ echo "中央値は$mid です。\n";
 
 //3-17
 $a = 100;
@@ -181,4 +208,4 @@ if ( $b > $c ) {
      echo "冬";
      break;
   }
-?>
+ ?>

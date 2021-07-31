@@ -107,7 +107,37 @@ echo "削除したい要素を入力してください。\n";
 
 aryRmv($arr,$n,$youso);
 
-//7-19　×18の応用だが難しい
+//7-19 ◯
+function aryRmvN($arr,$n,$youso,$deln) {
+    echo "削除する要素のインデックス: $n\n";
+    $res = array_search($n,$arr); 
+    echo "resの中身:$res\n";
+    echo "削除したい要素の個数:$deln";
+    $deln = (int)fgets(STDIN);
+    array_splice($arr,$res,$deln);
+    // print_r($arr);
+    $youso = $youso - $deln;
+     echo "削除後を表示します。\n";
+     for ( $i = 0; $i < $youso; $i++ ) {
+      echo "a[$i] = $arr[$i]\n";
+     }
+}
+    echo "配列に入れる要素数を入力してください。\n";
+    $youso = (int)fgets(STDIN);
+    echo "要素数：$youso\n";
+    echo "$youso 個数字を入力してください。\n";
+    $arr = array();
+    
+    for ( $i = 0; $i < $youso; $i++ ) {
+     $num = fgets(STDIN);
+     $arr[$i] = $num;
+    //  echo "a[$i] = $num\n";
+}
+echo "削除したい要素を入力してください。\n";
+ $n = (int)fgets(STDIN);
+
+aryRmvN($arr,$n,$youso,$deln);
+
 
 //7-20　◯計算はあってるが表示の仕方が’ちがう気がする
 function AryIns($youso) {
